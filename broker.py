@@ -20,7 +20,7 @@ async def check_messages():
         message_data = json.loads(message['data'])
 
         stock = Stock(message_data['ticker'], 'SMART', 'USD')
-        order = MarketOrder(message_data['strategy']['order_action'], message_data['strategy']['order_contracts'])
+        order = MarketOrder(message_data['order_action'], message_data['order_contracts'])
         trade = ib.placeOrder(stock, order)
 
 async def run_periodically(interval, periodic_function):

@@ -62,7 +62,7 @@ def webhook():
     if data:
 
         # Redis connection to TradingView
-        # r.publish('tradingview', data)
+        r.publish('tradingview', data)
 
         data_dict = request.json
 
